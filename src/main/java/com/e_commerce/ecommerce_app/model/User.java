@@ -30,7 +30,7 @@ public class User implements UserDetails {
     @NaturalId
     private String email;
     private String password;
-    @Enumerated(value = EnumType.STRING)
+
     private UserRole role;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -41,7 +41,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(email));
+            return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     @Override

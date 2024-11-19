@@ -28,7 +28,7 @@ public class OrderController {
         }
     }
 
-    @GetMapping("/{orderId}/order")
+    @GetMapping("order/{orderId}/order")
     public ResponseEntity<ApiResponse> getOrderById(@PathVariable Long orderId) {
         try {
             OrderDto order = orderService.getOrder(orderId);
@@ -38,7 +38,7 @@ public class OrderController {
         }
     }
 
-    @GetMapping("/{userId}/order")
+    @GetMapping("user/{userId}/order")
     public ResponseEntity<ApiResponse> getUserOrders(@PathVariable Long userId) {
         try {
             List<OrderDto> order = orderService.getUserOrders(userId);

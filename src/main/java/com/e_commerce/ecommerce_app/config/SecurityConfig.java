@@ -1,5 +1,6 @@
 package com.e_commerce.ecommerce_app.config;
 
+import com.e_commerce.ecommerce_app.enums.UserRole;
 import com.e_commerce.ecommerce_app.repository.UserRepository;
 import com.e_commerce.ecommerce_app.service.OurUserDetailService;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +32,8 @@ public class SecurityConfig {
         return http.
                 csrf(req->req.disable())
                 .authorizeHttpRequests(req->
-                        req.requestMatchers("/api/auth/**").permitAll()
+                        req.requestMatchers("/api/v1/auth/**").permitAll()
+                                .requestMatchers("api/v1/admin/**").hasAnyAuthority(UserRole.ADMIN.name())
                                 .anyRequest().authenticated())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -56,6 +58,7 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 }
+
 
 
 

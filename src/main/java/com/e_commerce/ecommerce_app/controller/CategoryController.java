@@ -28,17 +28,17 @@ public class CategoryController {
         }
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<ApiResponse> addCategory(@RequestBody Category category)
-    {
-        try {
-            Category category1= categoryService.addCategory(category);
-            return ResponseEntity.ok(new ApiResponse("Successfully category is added ",category1));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse("Error",null));
-
-        }
-    }
+//    @PostMapping("/add")
+//    public ResponseEntity<ApiResponse> addCategory(@RequestBody Category category)
+//    {
+//        try {
+//            Category category1= categoryService.addCategory(category);
+//            return ResponseEntity.ok(new ApiResponse("Successfully category is added ",category1));
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse("Error",null));
+//
+//        }
+//    }
 
 
 
@@ -63,25 +63,25 @@ public class CategoryController {
         }
     }
 
-    @PutMapping("/category/{id}/update")
-    public ResponseEntity<ApiResponse> updateCategory(@PathVariable Long id,@RequestBody Category category){
-        try {
-            Category category1 = categoryService.updateCategory(category, id);
-            return ResponseEntity.ok(new ApiResponse("Update success",category1));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse("Error",null));
-
-        }
-    }
-
-    @DeleteMapping("/category/{id}/delete")
-    public ResponseEntity<ApiResponse> deleteCategory(@PathVariable Long id){
-        try {
-            categoryService.deleteCategoryById(id);
-            return ResponseEntity.ok(new ApiResponse("successfully deleted",null));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse("Error",null));
-
-        }
-    }
+//    @PutMapping("/category/{id}/update")
+//    public ResponseEntity<ApiResponse> updateCategory(@PathVariable Long id,@RequestBody Category category){
+//        try {
+//            Category category1 = categoryService.updateCategory(category, id);
+//            return ResponseEntity.ok(new ApiResponse("Update success",category1));
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse("Error",null));
+//
+//        }
+//    }
+//
+//    @DeleteMapping("/category/{id}/delete")
+//    public ResponseEntity<ApiResponse> deleteCategory(@PathVariable Long id){
+//        try {
+//            categoryService.deleteCategoryById(id);
+//            return ResponseEntity.ok(new ApiResponse("successfully deleted",null));
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse("Error",null));
+//
+//        }
+//    }
 }
