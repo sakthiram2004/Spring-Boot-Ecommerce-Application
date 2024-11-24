@@ -1,5 +1,10 @@
 # Spring Boot E-Commerce Application
 
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white) 
+![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=spring-security&logoColor=white) 
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+
+
 This **Spring Boot E-Commerce Application** is built using Java and Spring Boot. It offers robust security with **JWT-based authentication**, ensuring a secure and scalable platform for businesses to manage and sell their products online. The application is designed for ease of maintenance and scalability, with a clean architecture and efficient handling of backend processes.
 
 
